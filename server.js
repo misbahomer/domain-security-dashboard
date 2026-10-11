@@ -5,7 +5,7 @@ require("dotenv").config();
 const app = express();
 app.use(express.json());
 
-app.get("/api/dns", async (req, res) => {
+app.get("/api/dns/all", async (req, res) => {
   const { domain } = req.query;
 
   if (!domain || !/^[a-zA-Z0-9.-]+$/.test(domain)) {
@@ -14,7 +14,7 @@ app.get("/api/dns", async (req, res) => {
 
   try {
     const response = await fetch(
-      `https://domscan.net/v1/dns?domain=${encodeURIComponent(domain)}`,
+      `https://domscan.net/v1/dns/all?domain=${encodeURIComponent(domain)}`,
       {
         headers: {
           Authorization: `Bearer ${process.env.DOMSCAN_API_KEY}`,

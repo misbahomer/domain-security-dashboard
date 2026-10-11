@@ -21,7 +21,7 @@ function App() {
 
     try {
       const response = await fetch(
-        `/api/dns?domain=${encodeURIComponent(domain.trim())}`
+        `/api/dns/all?domain=${encodeURIComponent(domain.trim())}`
       );
 
       const data = await response.json();
