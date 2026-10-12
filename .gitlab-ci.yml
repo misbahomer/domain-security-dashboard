@@ -4,7 +4,7 @@ include:
 
 stages:
   - test
-
+  
 test_backend:
   stage: test
   image: node:22
@@ -20,3 +20,4 @@ test_frontend:
     - npm ci
     - npm run lint
     - npm run build
+
